@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal | Paypadi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8FAFC;
+        }
+        h1, h2, h3, h4, h5, h6, .font-display {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        
+        .tab-content {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        
+        .tab-content.active {
+            display: block;
+            opacity: 1;
+        }
+
+        /* Glassmorphism for sticky nav elements */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        
+        /* Tab Nav active state custom styles */
+        .tab-btn.active {
+            color: #008080;
+            background-color: rgba(0, 128, 128, 0.1);
+            border-left-color: #008080; /* desktop */
+            border-bottom-color: #008080; /* mobile */
+        }
+        @media (min-width: 768px) {
+            .tab-btn.active {
+                border-bottom-color: transparent;
+            }
+        }
+        
+        /* Mobile tab scrollbar hide */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased selection:bg-[#008080] selection:text-white flex flex-col min-h-screen">
+
+    <!-- Global Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b border-slate-100/50 transition-all duration-300 bg-white/80" id="header">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Logo replaced with uploaded official logo -->
+            <a href="index.html" class="flex items-center gap-2 group">
+                <img src="assets/images/logo.jpg" alt="Paypadi Logo" class="h-8 w-auto transform group-hover:scale-105 transition-transform duration-300">
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="index.html#how-it-works" class="hover:text-[#008080] transition-colors text-base font-medium text-slate-600">How it Works</a>
+                <a href="index.html#drivers" class="hover:text-[#008080] transition-colors text-base font-medium text-slate-600">Drivers</a>
+                <a href="index.html#safety" class="hover:text-[#008080] transition-colors text-base font-medium text-slate-600">Safety</a>
+                <a href="index.html#faqs" class="hover:text-[#008080] transition-colors text-base font-medium text-slate-600">FAQs</a>
+            </nav>
+
+            <!-- CTA -->
+            <div class="flex items-center">
+                <button class="hidden md:flex hover:bg-slate-800 active:scale-95 transition-all text-base font-semibold text-white bg-slate-900 rounded-full pt-3 pr-6 pb-3 pl-6 shadow-sm items-center justify-center">Get the App</button>
+                <button class="md:hidden p-2 text-slate-900">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow pt-28 pb-20 px-6 max-w-7xl mx-auto w-full flex flex-col md:flex-row gap-12 relative">
+        
+        <!-- Mobile/Desktop Navigation -->
+        <aside class="md:w-64 flex-shrink-0">
+            <div class="md:sticky md:top-28 glass-nav rounded-2xl md:bg-white md:border border-slate-200 md:shadow-sm overflow-hidden z-40 sticky top-20 -mx-6 px-6 pb-2 md:mx-0 md:px-0 md:pb-0 mb-8 md:mb-0">
+                <nav class="flex md:flex-col overflow-x-auto no-scrollbar py-2 md:py-4 gap-2 md:gap-0" id="legal-tabs">
+                    <button data-target="privacy" class="tab-btn active flex items-center gap-3 px-4 md:px-6 py-3 text-sm md:text-base font-semibold text-slate-600 hover:bg-slate-50 transition-colors border-b-2 md:border-b-0 md:border-l-4 border-transparent whitespace-nowrap">
+                        <i data-lucide="shield" class="w-5 h-5"></i> Privacy Policy
+                    </button>
+                    <button data-target="terms" class="tab-btn flex items-center gap-3 px-4 md:px-6 py-3 text-sm md:text-base font-semibold text-slate-600 hover:bg-slate-50 transition-colors border-b-2 md:border-b-0 md:border-l-4 border-transparent whitespace-nowrap">
+                        <i data-lucide="file-text" class="w-5 h-5"></i> Terms of Service
+                    </button>
+                    <button data-target="delete-account" class="tab-btn flex items-center gap-3 px-4 md:px-6 py-3 text-sm md:text-base font-semibold text-slate-600 hover:bg-slate-50 transition-colors border-b-2 md:border-b-0 md:border-l-4 border-transparent whitespace-nowrap">
+                        <i data-lucide="user-x" class="w-5 h-5"></i> Account Deletion
+                    </button>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Content Area -->
+        <article class="flex-grow max-w-3xl leading-relaxed text-slate-600">
+            
+            <!-- Privacy Policy -->
+            <section id="privacy" class="tab-content active space-y-8">
+                <div class="border-b border-slate-200 pb-6 mb-8">
+                    <h1 class="font-display text-4xl md:text-5xl font-semibold text-slate-900 tracking-tight mb-4">Privacy Policy</h1>
+                    <p class="text-sm text-slate-500">Last Updated: April 2026</p>
+                </div>
+
+                <div class="prose prose-slate max-w-none">
+                    <p class="text-lg">At Paypadi, your privacy is our priority. This Privacy Policy explains how we collect, use, and protect your information when you use our campus mobility payment app.</p>
+
+                    <h2 class="font-display text-2xl font-semibold text-slate-900 mt-8 mb-4">1. Data Collection</h2>
+                    <p>We collect only the minimum data necessary to provide you with secure and instant ride payments. This includes:</p>
+                    <ul class="list-disc pl-6 space-y-2 mt-4">
+                        <li><strong>Personal Information:</strong> Your name, phone number, email address, and campus ID (to verify your status as a student or staff).</li>
+                        <li><strong>Transaction Data:</strong> Details of payments made through the Paypadi platform, including amounts, timestamps, and the driver's unique ID.</li>
+                    </ul>
+
+                    <h2 class="font-display text-2xl font-semibold text-slate-900 mt-8 mb-4">2. Location Data & Tracking</h2>
+                    <p><strong>We do not track your location in the background.</strong></p>
+                    <p class="mt-2">Unlike traditional ride-hailing apps, Paypadi is a payment layer designed for campus mobility. The passenger app <strong>does not require continuous background GPS tracking</strong> to process rides. Transactions are securely initiated by scanning the driver's unique QR code or manually entering their Cab ID, actively minimizing the location data collected from passengers.</p>
+
+                    <h2 class="font-display text-2xl font-semibold text-slate-900 mt-8 mb-4">3. Third-Party Processors</h2>
+                    <p>We do not sell your data. We share information only with trusted third parties necessary to process your transactions securely. Notably, all card payments and wallet funding are <strong>securely processed by Paystack</strong>, a PCI-DSS certified payment gateway. Paypadi does not store your full card details on our servers.</p>
+
+                    <h2 class="font-display text-2xl font-semibold text-slate-900 mt-8 mb-4">4. Data Retention</h2>
+                    <p>We retain your personal data and transaction history only for as long as your account is active, or as required by Nigerian financial regulations. If you choose to delete your account, your data will be permanently erased in accordance with our Account Deletion policy.</p>
+
+                    <h2 class="font-display text-2xl font-semibold text-slate-900 mt-8 mb-4">5. Contact Us</h2>
+                    <p>If you have any questions about this Privacy Policy, please contact our Data Protection Officer at privacy@paypadi.com.</p>
+                </div>
+            </section>
+
+            <!-- Terms of Service -->
+            <section id="terms" class="tab-content space-y-8">
+                <div class="border-b border-slate-200 pb-6 mb-8">
+                    <h1 class="font-display text-4xl md:text-5xl font-semibold text-slate-900 tracking-tight mb-4">Terms of Service</h1>
+                    <p class="text-sm text-slate-500">Last Updated: April 2026</p>
+                </div>
+
+                <div class="prose prose-slate max-w-none">
+                    <p class="text-lg">Welcome to Paypadi. By accessing or using our application, you agree to be bound by these Terms of Service.</p>
+
+                    <h2 class="font-display text-2xl font-semibold text-slate-900 mt-8 mb-4">1. The Paypadi Service</h2>
+                    <p>Paypadi provides a digital payment layer that facilitates instant transactions between passengers (students/staff) and independent campus transport unions or drivers. We provide the wallet, the QR scanning technology, and the payment infrastructure.</p>
+
+                    <h2 class="font-display text-2xl font-semibold text-slate-900 mt-8 mb-4">2. Payment Terms & Fees</h2>
+                    <p>To keep the platform operational, fast, and secure, Paypadi charges a <strong>transparent ₦5 convenience fee</strong> per successful ride payment. For example, if your transport fare is ₦200, exactly ₦205 will be deducted from your wallet. There are no hidden charges, maintenance fees, or surprise deductions.</p>
+
+                    <h2 class="font-display text-2xl font-semibold text-slate-900 mt-8 mb-4">3. User Conduct</h2>
+                    <p>You agree to use Paypadi strictly for lawful purposes. You must not:</p>
+                    <ul class="list-disc pl-6 space-y-2 mt-4">
+                        <li>Attempt to defraud drivers or the platform using fake transaction receipts.</li>
+                        <li>Reverse or chargeback wallet-funding transactions after funds have been spent.</li>
+                        <li>Share your PIN or account credentials with third parties.</li>
+                    </ul>
+
+                    <h2 class="font-display text-2xl font-semibold text-slate-900 mt-8 mb-4">4. Limitation of Liability</h2>
+                    <div class="bg-[#FFA500]/10 border-l-4 border-[#FFA500] p-4 rounded-r-lg mt-4 text-slate-800">
+                        <strong>Important Notice:</strong> Paypadi is exclusively a financial technology payment layer, <strong>not a transport provider</strong>. 
+                    </div>
+                    <p class="mt-4">We do not own the vehicles, nor do we employ the drivers. We partner with existing campus transport unions. Consequently, Paypadi is not liable for the condition of the vehicles, the conduct of the drivers, delays, accidents, or lost items during your commute. Your transportation agreement is strictly between you and the driver/union.</p>
+
+                    <h2 class="font-display text-2xl font-semibold text-slate-900 mt-8 mb-4">5. Termination</h2>
+                    <p>We reserve the right to suspend or terminate your account immediately if we detect fraudulent activity, abuse of the platform, or violation of these Terms.</p>
+                </div>
+            </section>
+
+            <!-- Account Deletion -->
+            <section id="delete-account" class="tab-content space-y-8">
+                <div class="border-b border-slate-200 pb-6 mb-8">
+                    <h1 class="font-display text-4xl md:text-5xl font-semibold text-slate-900 tracking-tight mb-4">Account Deletion</h1>
+                    <p class="text-sm text-slate-500">We're sorry to see you go. Below are the steps to permanently delete your Paypadi account and data.</p>
+                </div>
+
+                <!-- Section 1: In-App Deletion -->
+                <div class="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow hover:border-[#008080]/30 group">
+                    <h2 class="font-display text-2xl font-semibold text-slate-900 mb-6 flex items-center gap-3">
+                        <i data-lucide="smartphone" class="w-6 h-6 text-[#008080]"></i> 
+                        In-App Deletion Guide
+                    </h2>
+                    <p class="mb-6">The fastest way to delete your account is directly within the Paypadi mobile app. Follow these 3 simple steps:</p>
+                    
+                    <div class="grid sm:grid-cols-3 gap-6">
+                        <div class="flex flex-col items-center text-center p-4 bg-slate-50 rounded-xl border border-slate-100">
+                            <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-[#008080] font-bold shadow-sm mb-3 border border-slate-200">1</div>
+                            <i data-lucide="user" class="w-5 h-5 text-slate-400 mb-2"></i>
+                            <p class="font-semibold text-slate-800">Go to Profile</p>
+                            <p class="text-xs text-slate-500 mt-1">Tap the profile icon on the bottom right.</p>
+                        </div>
+                        <div class="flex flex-col items-center text-center p-4 bg-slate-50 rounded-xl border border-slate-100">
+                            <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-[#008080] font-bold shadow-sm mb-3 border border-slate-200">2</div>
+                            <i data-lucide="settings" class="w-5 h-5 text-slate-400 mb-2"></i>
+                            <p class="font-semibold text-slate-800">Open Settings</p>
+                            <p class="text-xs text-slate-500 mt-1">Scroll down to the settings section.</p>
+                        </div>
+                        <div class="flex flex-col items-center text-center p-4 bg-red-50 rounded-xl border border-red-100">
+                            <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-red-500 font-bold shadow-sm mb-3 border border-red-200">3</div>
+                            <i data-lucide="trash-2" class="w-5 h-5 text-red-400 mb-2"></i>
+                            <p class="font-semibold text-red-600">Delete Account</p>
+                            <p class="text-xs text-red-500 mt-1">Tap 'Delete Account' and confirm with PIN.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative flex items-center py-5">
+                    <div class="flex-grow border-t border-slate-200"></div>
+                    <span class="flex-shrink-0 mx-4 text-slate-400 text-sm font-medium uppercase tracking-widest">OR</span>
+                    <div class="flex-grow border-t border-slate-200"></div>
+                </div>
+
+                <!-- Section 2: Web Form Deletion -->
+                <div class="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 shadow-sm">
+                    <h2 class="font-display text-2xl font-semibold text-slate-900 mb-2 flex items-center gap-3">
+                        <i data-lucide="globe" class="w-6 h-6 text-[#FFA500]"></i> 
+                        Web Deletion Request
+                    </h2>
+                    <p class="text-slate-600 mb-6">Uninstalled the app already? Fill out this form to request manual account deletion from our support team.</p>
+
+                    <form class="space-y-5">
+                        <div class="grid md:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Registered Phone Number</label>
+                                <input type="tel" placeholder="e.g. 08012345678" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-[#008080] focus:border-transparent outline-none transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Email Address</label>
+                                <input type="email" placeholder="student@university.edu.ng" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-[#008080] focus:border-transparent outline-none transition-all">
+                            </div>
+                        </div>
+
+                        <div class="bg-red-50 border border-red-200 rounded-xl p-4 flex gap-3 text-red-800 text-sm">
+                            <i data-lucide="alert-triangle" class="w-5 h-5 text-red-500 shrink-0 mt-0.5"></i>
+                            <p><strong>Warning:</strong> Account deletion will permanently erase your transaction history, saved cards, and <strong>forfeit any remaining wallet balance</strong>. Please ensure you have withdrawn all funds before requesting deletion.</p>
+                        </div>
+
+                        <button type="button" class="w-full bg-[#FFA500] hover:bg-[#E69500] text-white font-semibold py-4 rounded-xl shadow-[0_4px_14px_0_rgba(255,165,0,0.39)] hover:shadow-[0_6px_20px_rgba(255,165,0,0.23)] hover:-translate-y-0.5 transition-all duration-200">
+                            Request Account Deletion
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+        </article>
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="bg-white border-t border-slate-200 pt-16 pb-8 px-6 mt-auto">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <a href="index.html" class="flex items-center gap-2 mb-6">
+                        <img src="assets/images/logo.jpg" alt="Paypadi Logo" class="h-8 w-auto">
+                    </a>
+                    <p class="text-lg text-slate-500 mb-6 max-w-sm">Moving campuses forward with instant, secure, and hassle-free ride payments.</p>
+                    <div class="flex gap-4 text-slate-400">
+                        <a href="#" class="hover:text-[#008080] transition-colors"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                        <a href="#" class="hover:text-[#008080] transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                        <a href="#" class="hover:text-[#008080] transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                    </div>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h4 class="font-semibold text-slate-900 mb-4 text-lg">Product</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-slate-500 hover:text-[#008080] transition-colors text-base">Download App</a></li>
+                        <li><a href="index.html#drivers" class="text-slate-500 hover:text-[#008080] transition-colors text-base">For Drivers</a></li>
+                        <li><a href="index.html#how-it-works" class="text-slate-500 hover:text-[#008080] transition-colors text-base">How it Works</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-slate-900 mb-4 text-lg">Support</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-slate-500 hover:text-[#008080] transition-colors text-base">Contact Us</a></li>
+                        <li><a href="#" class="text-slate-500 hover:text-[#008080] transition-colors text-base">WhatsApp Support</a></li>
+                        <li><a href="index.html#faqs" class="text-slate-500 hover:text-[#008080] transition-colors text-base">FAQs</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-slate-900 mb-4 text-lg">Legal</h4>
+                    <ul class="space-y-3">
+                        <li><a href="legal.html#privacy" class="text-slate-500 hover:text-[#008080] transition-colors text-base" onclick="switchTab('privacy')">Privacy Policy</a></li>
+                        <li><a href="legal.html#terms" class="text-slate-500 hover:text-[#008080] transition-colors text-base" onclick="switchTab('terms')">Terms of Service</a></li>
+                        <li><a href="legal.html#delete-account" class="text-slate-500 hover:text-[#008080] transition-colors text-base" onclick="switchTab('delete-account')">Account Deletion</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-4">
+                <p class="text-sm text-slate-400">© 2026 Paypadi. All rights reserved.</p>
+                <div class="flex flex-col sm:flex-row items-center gap-6">
+                    <div class="flex items-center gap-4 text-slate-300">
+                        <i data-lucide="shield-check" class="w-5 h-5"></i>
+                        <span class="text-xs font-medium uppercase tracking-wider">Secure SSL 256-bit</span>
+                    </div>
+                    
+                    <div class="h-4 w-px bg-slate-200 hidden sm:block"></div>
+                    
+                    <div class="flex items-center gap-2">
+                        <span class="text-sm font-medium text-slate-500">Securely powered by Paystack</span>
+                        <iconify-icon icon="simple-icons:paystack" class="text-[#0BA4DB] text-xl"></iconify-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons({ strokeWidth: 1.5 });
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                header.classList.add('shadow-sm');
+                header.classList.replace('bg-white/80', 'bg-white/90');
+            } else {
+                header.classList.remove('shadow-sm');
+                header.classList.replace('bg-white/90', 'bg-white/80');
+            }
+        });
+
+        // Tab Switching Logic
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        function switchTab(targetId) {
+            // Update URL hash without scrolling
+            history.pushState(null, null, `#${targetId}`);
+
+            // Remove active classes
+            tabBtns.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+
+            // Add active classes to target
+            const activeBtn = document.querySelector(`.tab-btn[data-target="${targetId}"]`);
+            const activeContent = document.getElementById(targetId);
+
+            if (activeBtn && activeContent) {
+                activeBtn.classList.add('active');
+                activeContent.classList.add('active');
+                
+                // On mobile, smoothly scroll the active tab into view in the horizontal nav
+                activeBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            }
+        }
+
+        // Handle clicks on tab buttons
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetId = btn.getAttribute('data-target');
+                switchTab(targetId);
+                window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top when switching
+            });
+        });
+
+        // Handle initial load based on URL hash
+        window.addEventListener('DOMContentLoaded', () => {
+            const hash = window.location.hash.replace('#', '');
+            if (hash && document.getElementById(hash)) {
+                switchTab(hash);
+            }
+        });
+    </script>
+</body>
+</html>
